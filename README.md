@@ -3,7 +3,7 @@
 ## Направления
 
 - [Разработка](skills/development/) — пять ролей для работы над программным продуктом: от постановки задачи до финального аудита PR.
-- [Motion-видео](skills/motion-video/SKILL.md) — рабочий Skill для сценария, сборки и правок редактируемого ролика. [Короткие запросы для правок](skills/motion-video/QUICK-EDITS.md) подходят для скриншота, текста, скорости и музыки.
+- [Motion-видео](skills/motion-video/SKILL.md) — быстрый старт агента: [инструменты и установка](skills/motion-video/SETUP.md), [возможности для пользователя](skills/motion-video/CAPABILITIES.md).
 
 ## Разработка
 
@@ -34,6 +34,4 @@
 
 ## Motion-видео
 
-Скопируйте `skills/motion-video/` в проект и дайте агенту прочитать [SKILL.md](skills/motion-video/SKILL.md). Он выбирает рабочий исходник по структуре проекта, а не по готовому MP4. Для интерфейсов и текста обычно подходят HyperFrames или Motion Canvas; Canvas JS и Manim — для рисованной графики и схем; Blender — для отдельных 3D-сцен. Remotion применим к проектам, уже собранным на React. FFmpeg и `ffprobe` нужны для экспорта и технической проверки. Звук ведётся отдельными дорожками SFX и музыки; музыку и голос можно брать из локальных файлов или подключённого каталога вроде HeyGen.
-
-После первого черновика пользователь может прислать скриншот или короткую правку обычными словами — примеры есть в [QUICK-EDITS.md](skills/motion-video/QUICK-EDITS.md). Исходные навыки для рисованной JS-анимации и саундтрека: [iart-ai/javascript-animation-skills](https://github.com/iart-ai/javascript-animation-skills). Если установлены навыки HyperFrames, агент использует их для композиции, анимации, медиа и рендера.
+Скопируйте `skills/motion-video/` в проект. Агент читает [SKILL.md](skills/motion-video/SKILL.md), проверяет систему по [SETUP.md](skills/motion-video/SETUP.md), готовит нужный стек и сразу предлагает человеку понятное [меню возможностей](skills/motion-video/CAPABILITIES.md). Для JS/TS-ролика нужны Node.js, FFmpeg/ffprobe и один движок; Python, Blender и внешние каталоги добавляются по задаче. В таблице Skill указано, за что отвечает каждый инструмент.

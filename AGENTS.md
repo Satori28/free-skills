@@ -1,6 +1,6 @@
 # Порядок работы с Free Skills
 
-Для разработки каждая роль читает свой `.codex/agents/<role>.toml`, `skills/development/<role>/SKILL.md` и указанные там вспомогательные файлы. Передавайте постановку и результат через документы и PR в GitHub, чтобы следующая роль видела полный контекст. Для нового motion-ролика или правки готового варианта прочти `skills/motion-video/SKILL.md`; короткие примеры запросов — в `skills/motion-video/QUICK-EDITS.md`.
+Для разработки каждая роль читает свой `.codex/agents/<role>.toml`, `skills/development/<role>/SKILL.md` и указанные там вспомогательные файлы. Передавайте постановку и результат через документы и PR в GitHub, чтобы следующая роль видела полный контекст. Для motion-видео начни с `skills/motion-video/SKILL.md`, проверь инструменты по `skills/motion-video/SETUP.md` и предложи пользователю доступные варианты из `skills/motion-video/CAPABILITIES.md`.
 
 ## Среда
 

@@ -1,0 +1,26 @@
+# Подготовка инструментов
+
+Агент начинает с проверки уже установленного и lockfile проекта. Для JS/TS-ролика нужны **Node.js, FFmpeg/ffprobe и выбранный движок**; Manim использует Python, Blender — собственный бинарник. Остальное устанавливается по сюжету, а не пакетом «на всякий случай».
+
+## База
+
+| Нужно | Проверка | Установка |
+| --- | --- | --- |
+| Node.js и npm — для JS/TS-стеков | `node --version`, `npm --version` | [Официальная загрузка Node.js](https://nodejs.org/en/download) |
+| FFmpeg и ffprobe | `ffmpeg -version`, `ffprobe -version` | [Официальная страница FFmpeg](https://ffmpeg.org/download.html); оба бинарника должны быть доступны в `PATH` |
+
+В существующем проекте сначала используй его менеджер пакетов и lockfile. Не заменяй закреплённые версии на `latest` ради установки. В новом проекте выбери один из вариантов ниже.
+
+## Движки и навыки
+
+| Когда нужен | Быстрый старт / источник |
+| --- | --- |
+| **HyperFrames** — UI, текст, карточки, переходы | `npx --yes hyperframes@latest init <project>` для нового проекта; в готовом проекте используй его `package.json`. Для короткого motion-видео установи agent skills через `npx hyperframes skills update motion-graphics`; для другого формата выбери соответствующий workflow. CLI даёт `check`, `preview`, `render` и шкалу. [HyperFrames](https://hyperframes.heygen.com/). GSAP — библиотека анимации внутри композиции, не отдельная программа; при модульном импорте ставь `npm install gsap`. |
+| **Motion Canvas** — программная 2D-анимация с редактором | `npm init @motion-canvas@latest`, выбери TypeScript. [Официальный quickstart](https://github.com/motion-canvas/motion-canvas/blob/main/packages/docs/docs/getting-started/quickstart.mdx). |
+| **Canvas JS** — кадры, нарисованные кодом | Браузер + Node.js; для рендера могут понадобиться Playwright/Chromium и FFmpeg. Навыки `javascript-animation` и `soundtrack`: `npx skills add iart-ai/javascript-animation-skills`. [Исходный пакет](https://github.com/iart-ai/javascript-animation-skills). |
+| **Manim** — схемы и математика | Python в отдельном окружении, затем `python -m pip install manim`. [Официальная установка](https://docs.manim.community/en/stable/installation.html). |
+| **Blender** — 3D | [Официальная загрузка Blender](https://www.blender.org/download/), проверка `blender --version` или путь к установленному бинарнику. |
+| **Remotion** — React-шаблоны | `npx create-video@latest` для нового проекта. [Официальная документация](https://www.remotion.dev/docs). |
+| **HeyGen** — необязательные музыка, голос и медиа | Используй уже подключённый плагин либо [официальный CLI](https://github.com/heygen-com/heygen-cli), если он поддерживается в среде. Для Windows CLI документирует WSL; вход и ключ API зависят от аккаунта пользователя. Локальные ассеты позволяют работать без HeyGen. |
+
+После установки проверь запуск выбранного движка и базовых команд. Перед первым рендером зафиксируй в проекте используемые версии, путь к сцене и команду экспорта, чтобы следующий агент мог продолжить работу без повторного поиска.
